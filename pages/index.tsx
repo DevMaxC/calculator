@@ -103,14 +103,14 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="min-w-screen flex h-screen min-h-screen items-center overflow-hidden bg-gradient-to-r from-slate-100 via-slate-600 to-slate-100">
+    <div className="min-w-screen flex h-screen min-h-screen items-center overflow-hidden bg-slate-500">
       <Head>
         <title>Calculator App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Mobile size constrainer */}
-      <div className="mx-auto flex h-[70%] w-full max-w-sm flex-col justify-end rounded-2xl bg-black text-white shadow-xl">
+      <div className="mx-auto flex h-[70%] min-h-[535px] w-full max-w-sm flex-col justify-end overflow-hidden rounded-2xl bg-black text-white shadow-xl">
         {/* Output Area */}
         <div onClick={() => test()} className="w-full overflow-hidden p-2">
           {(focusFirst && (
@@ -122,131 +122,131 @@ const Home: NextPage = () => {
         <div className="grid grid-cols-4 gap-2 p-4">
           <button
             onClick={() => clear()}
-            className="inline-block aspect-square h-20 w-20 rounded-full bg-gray-500 text-center align-middle text-4xl font-semibold text-black"
+            className="inline-block aspect-square h-20 w-20 rounded-full bg-gray-500 text-center align-middle text-4xl font-semibold text-black transition hover:bg-gray-400"
           >
             AC
           </button>
           <button
             onClick={() => negate()}
-            className="inline-block aspect-square h-20 w-20 rounded-full bg-gray-500 text-center align-middle text-4xl font-semibold text-black"
+            className="inline-block aspect-square h-20 w-20 rounded-full bg-gray-500 text-center align-middle text-4xl font-semibold text-black transition hover:bg-gray-400"
           >
             +/-
           </button>
           <button
             onClick={() => percent()}
-            className="inline-block aspect-square h-20 w-20 rounded-full bg-gray-500 text-center align-middle text-4xl font-bold text-black"
+            className="inline-block aspect-square h-20 w-20 rounded-full bg-gray-500 text-center align-middle text-4xl font-bold text-black transition hover:bg-gray-400"
           >
             %
           </button>
           <button
             onClick={() => setOperation(Operation.Divide)}
-            className={`inline-block aspect-square h-20 w-20 rounded-full ${
+            className={`inline-block aspect-square h-20 w-20 rounded-full transition ${
               op1 === Operation.Divide
-                ? "bg-white text-orange-500"
-                : "bg-orange-500"
+                ? "bg-white text-orange-500 hover:bg-slate-200"
+                : "bg-orange-500 hover:bg-orange-400"
             } text-center align-middle text-4xl font-bold`}
           >
             ÷
           </button>
           <button
             onClick={() => positionNumber("7")}
-            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold"
+            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold transition hover:bg-opacity-5"
           >
             7
           </button>
           <button
             onClick={() => positionNumber("8")}
-            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold"
+            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold transition hover:bg-opacity-5"
           >
             8
           </button>
           <button
             onClick={() => positionNumber("9")}
-            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold"
+            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center  align-middle text-4xl font-bold transition hover:bg-opacity-5"
           >
             9
           </button>
           <button
             onClick={() => setOperation(Operation.Multiply)}
-            className={`inline-block aspect-square h-20 w-20 rounded-full ${
+            className={`inline-block aspect-square h-20 w-20 rounded-full transition ${
               op1 === Operation.Multiply
-                ? "bg-white text-orange-500"
-                : "bg-orange-500"
+                ? "bg-white text-orange-500 hover:bg-slate-200"
+                : "bg-orange-500 hover:bg-orange-400"
             } text-center align-middle text-4xl font-bold`}
           >
             ×
           </button>
           <button
             onClick={() => positionNumber("4")}
-            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold"
+            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold transition hover:bg-opacity-5"
           >
             4
           </button>
           <button
             onClick={() => positionNumber("5")}
-            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold"
+            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold transition hover:bg-opacity-5"
           >
             5
           </button>
           <button
             onClick={() => positionNumber("6")}
-            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold"
+            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold transition hover:bg-opacity-5"
           >
             6
           </button>
           <button
             onClick={() => setOperation(Operation.Minus)}
-            className={`inline-block aspect-square h-20 w-20 rounded-full ${
+            className={`inline-block aspect-square h-20 w-20 rounded-full transition ${
               op1 === Operation.Minus
-                ? "bg-white text-orange-500"
-                : "bg-orange-500"
+                ? "bg-white text-orange-500 hover:bg-slate-200"
+                : "bg-orange-500 hover:bg-orange-400"
             } text-center align-middle text-4xl font-bold`}
           >
             -
           </button>
           <button
             onClick={() => positionNumber("1")}
-            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold"
+            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold transition hover:bg-opacity-5"
           >
             1
           </button>
           <button
             onClick={() => positionNumber("2")}
-            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold"
+            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold transition  hover:bg-opacity-5"
           >
             2
           </button>
           <button
             onClick={() => positionNumber("3")}
-            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold"
+            className="inline-block aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold transition hover:bg-opacity-5"
           >
             3
           </button>
           <button
             onClick={() => setOperation(Operation.Plus)}
-            className={`inline-block aspect-square h-20 w-20 rounded-full ${
+            className={`inline-block aspect-square h-20 w-20 rounded-full transition ${
               op1 === Operation.Plus
-                ? "bg-white text-orange-500"
-                : "bg-orange-500"
+                ? "bg-white text-orange-500 hover:bg-slate-200"
+                : "bg-orange-500 hover:bg-orange-400"
             } text-center align-middle text-4xl font-bold`}
           >
             +
           </button>
           <button
             onClick={() => positionNumber("0")}
-            className="col-span-2 inline-block h-20 rounded-full bg-white bg-opacity-10 pl-8 text-left align-middle text-4xl font-bold"
+            className="col-span-2 inline-block h-20 rounded-full bg-white bg-opacity-10 pl-8 text-left align-middle text-4xl font-bold transition hover:bg-opacity-5"
           >
             0
           </button>
           <button
             onClick={() => positionNumber(".")}
-            className="inline-block  aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold"
+            className="inline-block  aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold transition hover:bg-opacity-5"
           >
             .
           </button>
           <button
             onClick={() => equals()}
-            className="inline-block aspect-square h-20 rounded-full bg-orange-500 text-center align-middle text-4xl font-bold"
+            className="inline-block aspect-square h-20 rounded-full bg-orange-500 text-center align-middle text-4xl font-bold transition hover:bg-orange-400"
           >
             =
           </button>
