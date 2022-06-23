@@ -97,6 +97,18 @@ const Home: NextPage = () => {
     }
   };
 
+  const decimalPoint = () => {
+    if (focusFirst) {
+      if (!number1.includes(".")) {
+        setnumber1(number1 + ".");
+      }
+    } else {
+      if (!number2.includes(".")) {
+        setnumber2(number2 + ".");
+      }
+    }
+  };
+
   const equals = () => {
     setnumber1(execute(number1, op1, number2).toString());
     setFocusFirst(true);
@@ -239,7 +251,7 @@ const Home: NextPage = () => {
             0
           </button>
           <button
-            onClick={() => positionNumber(".")}
+            onClick={() => decimalPoint()}
             className="inline-block  aspect-square h-20 rounded-full bg-white bg-opacity-10 text-center align-middle text-4xl font-bold transition hover:bg-opacity-5"
           >
             .
