@@ -103,14 +103,14 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="min-w-screen h-screen min-h-screen overflow-hidden bg-gradient-to-r from-slate-100 via-slate-600 to-slate-100">
+    <div className="min-w-screen flex h-screen min-h-screen items-center overflow-hidden bg-gradient-to-r from-slate-100 via-slate-600 to-slate-100">
       <Head>
         <title>Calculator App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Mobile size constrainer */}
-      <div className="mx-auto flex h-screen w-full max-w-sm flex-col justify-end bg-black text-white">
+      <div className="mx-auto flex h-[70%] w-full max-w-sm flex-col justify-end rounded-2xl bg-black text-white shadow-xl">
         {/* Output Area */}
         <div onClick={() => test()} className="w-full overflow-hidden p-2">
           {(focusFirst && (
