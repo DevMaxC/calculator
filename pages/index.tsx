@@ -33,11 +33,18 @@ const Home: NextPage = () => {
 
   const clear = () => {
     if (!focusFirst) {
-      setnumber2("0");
-      setop1(Operation.Null);
-      setFocusFirst(true);
+      if (number2 != "0") {
+        setnumber2("0");
+      } else {
+        setop1(Operation.Null);
+        setFocusFirst(true);
+      }
     } else {
-      setnumber1("0");
+      if (number1 != "0") {
+        setnumber1("0");
+      } else {
+        setop1(Operation.Null);
+      }
     }
   };
 
@@ -96,16 +103,16 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="min-w-screen h-screen min-h-screen overflow-hidden bg-blue-500">
+    <div className="min-w-screen h-screen min-h-screen overflow-hidden bg-gradient-to-r from-slate-100 via-slate-600 to-slate-100">
       <Head>
         <title>Calculator App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Mobile size constrainer */}
-      <div className="flex h-screen w-full max-w-sm flex-col justify-end bg-black text-white">
+      <div className="mx-auto flex h-screen w-full max-w-sm flex-col justify-end bg-black text-white">
         {/* Output Area */}
-        <div onClick={() => test()} className="w-full p-2">
+        <div onClick={() => test()} className="w-full overflow-hidden p-2">
           {(focusFirst && (
             <h1 className="text-right text-6xl">{number1}</h1>
           )) || <h1 className="text-right text-6xl">{number2}</h1>}
@@ -133,7 +140,11 @@ const Home: NextPage = () => {
           </button>
           <button
             onClick={() => setOperation(Operation.Divide)}
-            className="inline-block aspect-square h-20 w-20 rounded-full bg-orange-500 text-center align-middle text-4xl font-bold"
+            className={`inline-block aspect-square h-20 w-20 rounded-full ${
+              op1 === Operation.Divide
+                ? "bg-white text-orange-500"
+                : "bg-orange-500"
+            } text-center align-middle text-4xl font-bold`}
           >
             ÷
           </button>
@@ -157,7 +168,11 @@ const Home: NextPage = () => {
           </button>
           <button
             onClick={() => setOperation(Operation.Multiply)}
-            className="inline-block aspect-square h-20 rounded-full bg-orange-500 text-center align-middle text-4xl font-bold"
+            className={`inline-block aspect-square h-20 w-20 rounded-full ${
+              op1 === Operation.Multiply
+                ? "bg-white text-orange-500"
+                : "bg-orange-500"
+            } text-center align-middle text-4xl font-bold`}
           >
             ×
           </button>
@@ -181,7 +196,11 @@ const Home: NextPage = () => {
           </button>
           <button
             onClick={() => setOperation(Operation.Minus)}
-            className="inline-block aspect-square h-20 rounded-full bg-orange-500 text-center align-middle text-4xl font-bold"
+            className={`inline-block aspect-square h-20 w-20 rounded-full ${
+              op1 === Operation.Minus
+                ? "bg-white text-orange-500"
+                : "bg-orange-500"
+            } text-center align-middle text-4xl font-bold`}
           >
             -
           </button>
@@ -205,7 +224,11 @@ const Home: NextPage = () => {
           </button>
           <button
             onClick={() => setOperation(Operation.Plus)}
-            className="inline-block aspect-square h-20 rounded-full bg-orange-500 text-center align-middle text-4xl font-bold"
+            className={`inline-block aspect-square h-20 w-20 rounded-full ${
+              op1 === Operation.Plus
+                ? "bg-white text-orange-500"
+                : "bg-orange-500"
+            } text-center align-middle text-4xl font-bold`}
           >
             +
           </button>
