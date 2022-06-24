@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const Home: NextPage = () => {
@@ -115,13 +116,21 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="min-w-screen flex h-screen min-h-screen items-center overflow-hidden bg-slate-500">
+    <div className="min-w-screen relative flex h-screen min-h-screen items-center overflow-hidden bg-slate-500">
       <Head>
         <title>Calculator App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Mobile size constrainer */}
+      <Link href="https://portfolio-qnimqxkeh-gusud.vercel.app/">
+        <a className="group absolute top-4 right-4 cursor-pointer rounded-md bg-slate-600 p-4 font-thin text-slate-400 transition-colors hover:bg-slate-700 hover:text-slate-300">
+          <h1>Made by Max Church</h1>
+          <h2>Using:</h2>
+          <h2>TypeScript, React, Tailwind, NextJS</h2>
+        </a>
+      </Link>
+
       <div className="mx-auto flex h-[70%] min-h-[535px] w-full max-w-sm flex-col justify-end overflow-hidden rounded-2xl bg-black text-white shadow-xl">
         {/* Output Area */}
         <div onClick={() => test()} className="w-full overflow-hidden p-2">
