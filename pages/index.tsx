@@ -123,7 +123,7 @@ const Home: NextPage = () => {
       </Head>
 
       {/* Mobile size constrainer */}
-      <Link href="https://portfolio-qnimqxkeh-gusud.vercel.app/">
+      <Link href="https://portfolio-gusud.vercel.app/">
         <a className="group absolute top-4 right-4 cursor-pointer rounded-md bg-slate-600 p-4 font-thin text-slate-400 transition-colors hover:bg-slate-700 hover:text-slate-300">
           <h1>Made by Max Church</h1>
           <h2>Using:</h2>
